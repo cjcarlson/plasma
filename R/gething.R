@@ -7,8 +7,12 @@
 #' @keywords text
 #'
 #' @import raster
+#'
 
-gething <- function(temps,malaria,burnin=1,maxtime=1,tau=30,phi=NA,Tmin=NA) {
+
+gething2 <- function(temps,malaria,burnin=1,maxtime=1,tau=30,phi=NA,Tmin=NA) {
+
+  # gething1 should just be days of the year suitable
 
   # What kind of malaria are we working with here?
 
@@ -46,7 +50,7 @@ gething <- function(temps,malaria,burnin=1,maxtime=1,tau=30,phi=NA,Tmin=NA) {
   Zdummy <- Y
 
   # This is the burn-in time loop
-  for (i in 1:(12*60*burnin)) {
+  for (i in 1:(12*365*burnin)) {
 
     T <- temps[[i]]
     pT <- exp(-1/(-4.4+1.31*T-0.03*T^2))
@@ -83,7 +87,7 @@ gething <- function(temps,malaria,burnin=1,maxtime=1,tau=30,phi=NA,Tmin=NA) {
 
   Zstack <- stack() # stores values
 
-  for (i in 1:(12*60*burnin)) {
+  for (i in 1:(12*365*burnin)) {
 
     T <- temps[[i]]
     pT <- exp(-1/(-4.4+1.31*T-0.03*T^2))
