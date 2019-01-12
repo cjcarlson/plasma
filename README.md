@@ -1,4 +1,4 @@
 # plasma
-🗺️ ⚕️ 👩🏽‍ Plasmodium maps 👩🏽‍⚕️ 🗺️
+🗺️ ⚕️ 👩 Tools for making _Plasmodium_ maps 👩 r⚕️ 🗺️
 
-Work in progress
+
